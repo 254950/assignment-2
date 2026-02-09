@@ -28,14 +28,14 @@ public class Booking implements Payable {
 
     @Override
     public double calculateTotal() {
-        return active ? room.getPrice() * nights : 0.0;
+        return active ? room.getPricePerNight() * nights : 0.0;
     }
 
     @Override
     public String toString() {
         return "Booking{id=" + id +
-                ", guest=" + guest.getName() +
-                ", room=" + room.getNumber() +
+                ", guest=" + guest.getFullName() +
+                ", room=" + room.getRoomNumber() +
                 ", nights=" + nights +
                 ", active=" + active +
                 ", total=" + calculateTotal() +
